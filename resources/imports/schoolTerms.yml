@@ -1,0 +1,39 @@
+details:
+    type: schoolTerms
+    name: School Terms
+    table: gibbonSchoolYearTerm
+    modes: { update: true, insert: true, export: true }
+access:
+    module: School Admin
+    action: Manage School Years
+primaryKey:
+    gibbonSchoolYearID
+uniqueKeys:
+    - name
+    - sequenceNumber
+table:
+    gibbonSchoolYearID:
+        name: "School Year"
+        desc: "School year name, as set in School Admin. Must already exist."
+        args: { filter: schoolyear, required: true, readonly: true }
+        relationship: { table: gibbonSchoolYear, key: gibbonSchoolYearID, field: name  }
+    name: 
+        name: "Term Name"
+        desc: ""
+        args: { filter: term, required: true }
+    nameShort: 
+        name: "Short Name"
+        desc: "Must be unique."
+        args: { filter: string, required: true }
+    sequenceNumber: 
+        name: "Sequence Number"
+        desc: "Must be unique. Controls chronological ordering."
+        args: { filter: numeric, required: true }
+    firstDay: 
+        name: "First Day"
+        desc: ""
+        args: { filter: date, required: true }
+    lastDay: 
+        name: "Last Day"
+        desc: ""
+        args: { filter: date, required: true }
