@@ -1,0 +1,53 @@
+details:
+    type: schoolDaysOfWeek
+    name: School Days of the Week
+    table: gibbonDaysOfWeek
+    modes: { update: true, insert: false, export: true }
+access:
+    module: School Admin
+    action: Manage Days of the Week
+primaryKey:
+    gibbonDaysOfWeekID
+uniqueKeys:
+    - name
+    - sequenceNumber
+    - nameShort
+table:
+    gibbonDaysOfWeekID:
+        name: "Day of the Week ID"
+        desc: "01=Monday through 07=Sunday"
+        args: { filter: numeric, required: true, readonly: true }
+    name: 
+        name: "Day of Week Name"
+        desc: "ex. Monday"
+        args: { filter: term, required: true }
+    nameShort: 
+        name: "Short Name"
+        desc: "ex. Mon"
+        args: { filter: string, required: true }
+    sequenceNumber: 
+        name: "Sequence Number"
+        desc: "Must be unique. Controls chronological ordering."
+        args: { filter: numeric, required: true }
+    schoolDay:
+        name: "School Day"
+        desc: ""
+        args: { filter: yesno, required: true, custom: true }
+    schoolOpen:
+        name: "Start Time"
+        desc: "Format: hh:mm (24hr)"
+        args: { filter: time, required: false }
+    schoolStart:
+        name: "End Time"
+        desc: "Format: hh:mm (24hr)"
+        args: { filter: time, required: false }
+    schoolEnd:
+        name: "Start Time"
+        desc: "Format: hh:mm (24hr)"
+        args: { filter: time, required: false }
+    schoolClose:
+        name: "End Time"
+        desc: "Format: hh:mm (24hr)"
+        args: { filter: time, required: false }
+
+

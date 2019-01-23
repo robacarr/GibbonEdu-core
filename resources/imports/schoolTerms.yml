@@ -20,7 +20,7 @@ table:
     name: 
         name: "Term Name"
         desc: ""
-        args: { filter: term, required: true }
+        args: { filter: string, required: true }
     nameShort: 
         name: "Short Name"
         desc: "Must be unique."
