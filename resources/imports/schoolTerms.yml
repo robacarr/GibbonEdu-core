@@ -7,7 +7,7 @@ access:
     module: School Admin
     action: Manage Terms
 primaryKey:
-    gibbonSchoolYearID
+    gibbonSchoolYearTermID
 uniqueKeys:
     - name
     - sequenceNumber
@@ -16,7 +16,7 @@ table:
         name: "School Year"
         desc: "School year name, as set in School Admin. Must already exist."
         args: { filter: schoolyear, required: true, readonly: true }
-        relationship: { table: gibbonSchoolYear, key: gibbonSchoolYearID, field: name  }
+        relationship: { table: gibbonSchoolYear, key: gibbonSchoolYearID, field: name }
     name: 
         name: "Term Name"
         desc: ""
