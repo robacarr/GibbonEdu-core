@@ -1,0 +1,38 @@
+details:
+    type: timetables
+    name: Timetables
+    table: gibbonTT
+    modes: { update: true, insert: true, export: true }
+access:
+    module: Timetable Admin
+    action: Manage Timetables
+primaryKey:
+    gibbonTTID
+uniqueKeys:
+    - [ gibbonSchoolYearID, nameShort ]
+table:
+    gibbonSchoolYearID:
+        name: "School Year"
+        desc: "School year name, as set in School Admin. Must already exist."
+        args: { filter: schoolyear, required: true, custom: true }
+        relationship: { table: gibbonSchoolYear, key: gibbonSchoolYearID, field: name  }
+    name:
+        name: "Name"
+        desc: "Must be unique for this school year."
+        args: { filter: string, required: true }
+    nameShort:
+        name: "Short Name"
+        desc: "Must be unique for this school year."
+        args: { filter: string, required: true }
+    nameShortDisplay:
+        name: "Day Column Name"
+        desc: "'Day of the Week' or 'Timetable Day Short Name'"
+        args: { filter: string, required: true }
+    gibbonYearGroupIDList:
+        name: "Year Groups ID List"
+        desc: "Comma delimited string"
+        args: { filter: string, required: true }
+    active:
+        name: "Active"
+        desc: ""
+        args: { filter: yesno, required: true, custom: true }
