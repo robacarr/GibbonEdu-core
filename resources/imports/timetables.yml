@@ -31,7 +31,7 @@ table:
     gibbonYearGroupIDList: 
         name: "Year Groups"
         desc: "Relevant student year groups"
-        args: { filter: csv, custom: true }
+        args: { filter: yearlist, custom: true }
         relationship: { table: gibbonYearGroup, key: gibbonYearGroupID, field: nameShort }
     active:
         name: "Active"
