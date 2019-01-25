@@ -28,10 +28,11 @@ table:
         name: "Day Column Name"
         desc: "'Day of the Week' or 'Timetable Day Short Name'"
         args: { filter: string, required: true }
-    gibbonYearGroupIDList:
-        name: "Year Groups ID List"
-        desc: "Comma delimited string"
-        args: { filter: string, required: true }
+    gibbonYearGroupIDList: 
+        name: "Year Groups"
+        desc: "Relevant student year groups"
+        args: { filter: csv, custom: true }
+        relationship: { table: gibbonYearGroup, key: gibbonYearGroupID, field: nameShort }
     active:
         name: "Active"
         desc: ""
